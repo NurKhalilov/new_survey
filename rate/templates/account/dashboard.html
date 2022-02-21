@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Report{% endblock title %}
+
+{% block content %}
+<h1>Dashboard</h1>
+{% for region in regions %}
+<h3><a href="{% url 'rate:report_add' region.id %}">{{region.name}}</a></h3><br>
+{% endfor %}
+{% endblock content %}
